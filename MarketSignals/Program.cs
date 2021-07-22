@@ -1,11 +1,10 @@
+using MarketSignals.Interfaces;
+using MarketSignals.Services;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
+using SignalSources.Binance;
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MarketSignals
@@ -16,9 +15,8 @@ namespace MarketSignals
         {
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("#app");
-
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
-
+            builder.Services.AddTransient<IBinanceService>(x=>new BinanceService(BinanceConnection.Factory.NewBinanceConnection()));
             await builder.Build().RunAsync();
         }
     }

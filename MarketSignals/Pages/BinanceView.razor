@@ -1,0 +1,13 @@
+﻿@page "/binance"
+<h3>BinanceView</h3>
+<button @onclick="In"></button>
+<select class="form-control selectpicker" @bind="CurrentSymbol">
+    <option>--select crypto pair--</option>
+    @foreach (var item in Symbols)
+    {
+        <option value="item">@item</option>
+    }
+</select>
+@code {
+
+}

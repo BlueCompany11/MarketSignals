@@ -3,7 +3,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketSignals", "MarketSignals\MarketSignals.csproj", "{64ED6575-DE5A-447E-B24A-A9EEDEDA9A74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarketSignals", "MarketSignals\MarketSignals.csproj", "{64ED6575-DE5A-447E-B24A-A9EEDEDA9A74}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarketSignals.Tests", "MarketSignals.Tests\MarketSignals.Tests.csproj", "{41B1B41A-37E0-4798-922E-F7A25A7B077B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalSources.Twitter", "SignalSources.Twitter\SignalSources.Twitter.csproj", "{E2237995-77A9-48DA-9E75-27E73B9D5147}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalSources.Binance", "SignalSources.Binance\SignalSources.Binance.csproj", "{D51469B1-4F19-49E7-876A-21194AB10227}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignnalSources.Twitter.Tests", "SignnalSources.Twitter.Tests\SignnalSources.Twitter.Tests.csproj", "{8F8AC731-AC9F-4DE5-9846-F2331A535657}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalSources.Binance.Tests", "SignalSources.Binance.Tests\SignalSources.Binance.Tests.csproj", "{F6B52174-E2C1-4B6C-B3C9-5B8926A0A16C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{36159991-E4C1-4A46-8C6B-ECFA2BBB1208}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketSignals.Serverless", "MarketSignals.Serverless\MarketSignals.Serverless.csproj", "{1E385726-5A79-46F4-86F2-3F2BEE470550}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +32,30 @@ Global
 		{64ED6575-DE5A-447E-B24A-A9EEDEDA9A74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64ED6575-DE5A-447E-B24A-A9EEDEDA9A74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64ED6575-DE5A-447E-B24A-A9EEDEDA9A74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41B1B41A-37E0-4798-922E-F7A25A7B077B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41B1B41A-37E0-4798-922E-F7A25A7B077B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41B1B41A-37E0-4798-922E-F7A25A7B077B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41B1B41A-37E0-4798-922E-F7A25A7B077B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2237995-77A9-48DA-9E75-27E73B9D5147}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2237995-77A9-48DA-9E75-27E73B9D5147}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2237995-77A9-48DA-9E75-27E73B9D5147}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2237995-77A9-48DA-9E75-27E73B9D5147}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D51469B1-4F19-49E7-876A-21194AB10227}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D51469B1-4F19-49E7-876A-21194AB10227}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D51469B1-4F19-49E7-876A-21194AB10227}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D51469B1-4F19-49E7-876A-21194AB10227}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F8AC731-AC9F-4DE5-9846-F2331A535657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F8AC731-AC9F-4DE5-9846-F2331A535657}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F8AC731-AC9F-4DE5-9846-F2331A535657}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F8AC731-AC9F-4DE5-9846-F2331A535657}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6B52174-E2C1-4B6C-B3C9-5B8926A0A16C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6B52174-E2C1-4B6C-B3C9-5B8926A0A16C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6B52174-E2C1-4B6C-B3C9-5B8926A0A16C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6B52174-E2C1-4B6C-B3C9-5B8926A0A16C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E385726-5A79-46F4-86F2-3F2BEE470550}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E385726-5A79-46F4-86F2-3F2BEE470550}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E385726-5A79-46F4-86F2-3F2BEE470550}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E385726-5A79-46F4-86F2-3F2BEE470550}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
