@@ -1,7 +1,4 @@
-using Microsoft.Azure.Functions.Worker.Configuration;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using System.Threading.Tasks;
 
 namespace MarketSignals.Serverless
 {
@@ -12,7 +9,6 @@ namespace MarketSignals.Serverless
             var host = new HostBuilder()
                 .ConfigureFunctionsWorkerDefaults()
                 .Build();
-
             host.Run();
         }
     }
