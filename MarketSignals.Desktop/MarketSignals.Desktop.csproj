@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>MarketSignals.Desktop</AssemblyName>
+    <UserSecretsId>f012abc9-e3f3-4582-9693-d4a8b055cb70</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="5.0.0" />
+    <PackageReference Include="Prism.DryIoc" Version="8.1.97" />
+    <PackageReference Include="Prism.DryIoc.Extensions" Version="8.0.62" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MarketSignals.IoC\MarketSignals.IoC.csproj" />
+    <ProjectReference Include="..\SignalSources.Binance\SignalSources.Binance.csproj" />
+    <ProjectReference Include="..\SignalSources.Taapi\SignalSources.Taapi.csproj" />
+    <ProjectReference Include="..\SignalSources.Twitter\SignalSources.Twitter.csproj" />
+    <ProjectReference Include="..\SignalSources.Youtube\SignalSources.Youtube.csproj" />
+    <ProjectReference Include="..\SignalsSources.Interfaces\SignalsSources.Interfaces.csproj" />
+  </ItemGroup>
+</Project>

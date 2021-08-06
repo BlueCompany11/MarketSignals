@@ -1,24 +1,20 @@
+using FluentAssertions;
+using SignalSources.Common;
 using SignalSources.Twitter;
 using System;
 using System.Threading.Tasks;
 using Xunit;
-
 namespace SignnalSources.Twitter.Tests
 {
     public class TwitterConnectionShould
     {
+        private TwitterSecrets twitterSecrets = new TwitterSecrets(SignalsSecretsProvider.GetConfigurationRoot());
         [Fact]
-        public async Task Test1()
+        public async Task Connect()
         {
-            var sut = new TwitterConnection();
-            await sut.X();
-        }
-        [Fact]
-        public void Test2()
-        {
-            var a = DateTimeOffset.Now;
-            var b = DateTimeOffset.Now.AddHours(-1);
-            Assert.True(a > b);
+            var sut = new TwitterConnection(this.twitterSecrets);
+            var signals = await sut.GetSignalsAsync("Twitter", DateTimeOffset.Now.AddDays(-40));
+            signals.Should().HaveCountGreaterThan(0);
         }
     }
 }

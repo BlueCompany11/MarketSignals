@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DryIoc.dll" Version="4.8.1" />
+    <PackageReference Include="Prism.Core" Version="8.1.97" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SignalSources.Twitter\SignalSources.Twitter.csproj" />
+    <ProjectReference Include="..\SignalSources.Youtube\SignalSources.Youtube.csproj" />
+    <ProjectReference Include="..\SignalsSources.Interfaces\SignalsSources.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>
