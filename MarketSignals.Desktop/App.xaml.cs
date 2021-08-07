@@ -41,14 +41,11 @@ namespace MarketSignals.Desktop
             containerRegistry.Register<ITwitterSignalProvider, TwitterConnection>();
             containerRegistry.Register<IYouTubeSignalProvider, YoutubeConnection>();
             containerRegistry.Register<ISignalIdentifierProvider, SignalIdentifierProvider>();
-            containerRegistry.Register<ITwitterSignalObserver, TwitterObserver>();
+            containerRegistry.Register<ISignalObserver, SignalObserver>();
+            containerRegistry.Register<ITwitterSignalObserver, TwitterSignalObserver>();
+            containerRegistry.Register<IYoutubeSignalObserver, YoutubeSignalObserver>();
+            
             
         }
-/*        public static IConfigurationRoot CredentialsConfig()
-        {
-            return new ConfigurationBuilder()
-                    .AddJsonFile("Credentials.json", optional: false, reloadOnChange: true)
-                    .Build();
-        }*/
     }
 }

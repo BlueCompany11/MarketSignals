@@ -3,27 +3,29 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace SignalSources.Twitter
+namespace SignalSources.Common
 {
-    public class TwitterObserver: ITwitterSignalObserver
+    public class SignalObserver: ISignalObserver 
     {
         public event Action<ISignal> NewSignalsEvent;
 
         private Dictionary<string, ISignal> signals = new();
-        private readonly ITwitterSignalProvider twitterSignalProvider;
         private readonly ISignalIdentifierProvider signalIdentifierProvider;
         public IEnumerable<ISignal> CurrentSignals => this.signals.Values;
 
-        public TwitterObserver(ITwitterSignalProvider twitterSignalProvider, ISignalIdentifierProvider signalIdentifierProvider)
+        public ISignalSourceProvider SignalSourceProvider { private get; set; }
+
+        public SignalObserver(ISignalIdentifierProvider signalIdentifierProvider)
         {
-            this.twitterSignalProvider = twitterSignalProvider;
             this.signalIdentifierProvider = signalIdentifierProvider;
         }
+
         public async Task BeginObservationAsync(IEnumerable<string> profileName, DateTimeOffset publishedAfter)
         {
+            //TODO check if SignalSourceProvider is not null
             foreach (string name in profileName)
             {
-                var signals = await this.twitterSignalProvider.GetSignalsAsync(name, publishedAfter);
+                var signals = await this.SignalSourceProvider.GetSignalsAsync(name, publishedAfter);
                 foreach (var item in signals)
                 {
                     string id = this.signalIdentifierProvider.GetSignalIdentify(item);
@@ -34,7 +36,7 @@ namespace SignalSources.Twitter
                     }
                 }
             }
-            
+
         }
     }
 }
