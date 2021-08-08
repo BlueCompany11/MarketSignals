@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace SignalsSources.Interfaces
+namespace SignalSources.Interfaces
 {
     public interface ISignalSourceProvider
     {

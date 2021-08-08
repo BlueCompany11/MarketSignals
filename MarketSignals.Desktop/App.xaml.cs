@@ -1,12 +1,9 @@
 ﻿using MarketSignals.Desktop.Views;
-using Microsoft.Extensions.Configuration;
+using MarketSignals.IoC;
 using Prism.Ioc;
 using Prism.Regions;
-using SignalSources.Common;
-using SignalSources.Taapi;
-using SignalSources.Twitter;
-using SignalSources.Youtube;
-using SignalsSources.Interfaces;
+using SignalSources.Interfaces;
+using System.Collections.Generic;
 using System.Windows;
 
 namespace MarketSignals.Desktop
@@ -28,24 +25,8 @@ namespace MarketSignals.Desktop
         }
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            //TODO Raise exception when file not found
-            var config = SignalsSecretsProvider.GetConfigurationRoot();
-
-
-            containerRegistry.RegisterInstance<IConfigurationRoot>(config);
-
-            containerRegistry.RegisterSingleton<TwitterSecrets>();
-            containerRegistry.RegisterSingleton<YoutubeSecrets>();
-            containerRegistry.RegisterSingleton<TaapiSecrets>();
-
-            containerRegistry.Register<ITwitterSignalProvider, TwitterConnection>();
-            containerRegistry.Register<IYouTubeSignalProvider, YoutubeConnection>();
-            containerRegistry.Register<ISignalIdentifierProvider, SignalIdentifierProvider>();
-            containerRegistry.Register<ISignalObserver, SignalObserver>();
-            containerRegistry.Register<ITwitterSignalObserver, TwitterSignalObserver>();
-            containerRegistry.Register<IYoutubeSignalObserver, YoutubeSignalObserver>();
-            
-            
+            var setup = new Setup();
+            containerRegistry.RegisterInstance(new List<ISignalObserver> { setup.ResolveTwitterSignalObserver(), setup.ResolveYoutubeSignalObserver() });
         }
     }
 }

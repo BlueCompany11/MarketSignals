@@ -1,5 +1,5 @@
 ﻿using Prism.Mvvm;
-using SignalsSources.Interfaces;
+using SignalSources.Interfaces;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -16,17 +16,15 @@ namespace MarketSignals.Desktop.ViewModels
             get => this.signals;
             set => this.SetProperty(ref this.signals, value);
         }
-        public SignalsDashboardViewModel(ITwitterSignalObserver twitterSignalObserver, IYoutubeSignalObserver youTubeSignalObserver)
+        public SignalsDashboardViewModel(List<ISignalObserver> signalObservers)
         {
-            this.signalObservers.Add(twitterSignalObserver);
-            this.signalObservers.Add(youTubeSignalObserver);
+            this.signalObservers = signalObservers;
             this.Signals = new ObservableCollection<ISignal>();
             foreach (var observer in this.signalObservers)
             {
                 observer.NewSignalsEvent += this.SignalObserver_NewSignalsEvent;
+                observer.BeingObservationAsync();
             }
-            twitterSignalObserver.BeginObservationAsync(new List<string> { "PiotrOstapowicz" }, System.DateTimeOffset.Now.AddDays(-1));
-            youTubeSignalObserver.BeginObservationAsync(new List<string> { "UCqK_GSMbpiV8spgD3ZGloSw" }, System.DateTimeOffset.Now.AddDays(-40));
         }
 
         private void SignalObserver_NewSignalsEvent(ISignal signal)

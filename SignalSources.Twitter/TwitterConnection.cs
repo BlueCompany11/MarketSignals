@@ -1,4 +1,4 @@
-﻿using SignalsSources.Interfaces;
+﻿using SignalSources.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using Tweetinvi;
 
 namespace SignalSources.Twitter
 {
-    public class TwitterConnection: ITwitterSignalProvider
+    public class TwitterConnection: ISignalSourceProvider
     {
         private TwitterClient userClient;
         public TwitterConnection(TwitterSecrets secrets)

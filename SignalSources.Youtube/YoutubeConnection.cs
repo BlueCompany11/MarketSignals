@@ -1,7 +1,7 @@
 ﻿using Google.Apis.Services;
 using Google.Apis.YouTube.v3;
 using Newtonsoft.Json;
-using SignalsSources.Interfaces;
+using SignalSources.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace SignalSources.Youtube
 {
 
-    public class YoutubeConnection: IYouTubeSignalProvider
+    public class YoutubeConnection: ISignalSourceProvider
     {
 
         private YouTubeService youtubeService;

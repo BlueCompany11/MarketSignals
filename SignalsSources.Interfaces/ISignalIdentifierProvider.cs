@@ -1,4 +1,4 @@
-﻿namespace SignalsSources.Interfaces
+﻿namespace SignalSources.Interfaces
 {
     public interface ISignalIdentifierProvider
     {

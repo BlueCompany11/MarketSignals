@@ -1,4 +1,4 @@
-﻿using SignalsSources.Interfaces;
+﻿using SignalSources.Interfaces;
 using System;
 
 namespace SignalSources.Youtube

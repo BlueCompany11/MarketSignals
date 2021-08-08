@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SignalsSources.Interfaces\SignalsSources.Interfaces.csproj" />
+    <ProjectReference Include="..\SignalsSources.Interfaces\SignalSources.Interfaces.csproj" />
   </ItemGroup>
 
   <ItemGroup>

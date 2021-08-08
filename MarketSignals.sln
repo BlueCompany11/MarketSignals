@@ -34,7 +34,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalSources.Youtube", "Si
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalSources.Youtube.Tests", "SignalSources.Youtube.Tests\SignalSources.Youtube.Tests.csproj", "{A4F6F112-D5DA-456F-96C4-F6C540808892}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalsSources.Interfaces", "SignalsSources.Interfaces\SignalsSources.Interfaces.csproj", "{AEAF3F0A-B8BF-4AA6-BA15-D08B17B52A4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalSources.Interfaces", "SignalsSources.Interfaces\SignalSources.Interfaces.csproj", "{AEAF3F0A-B8BF-4AA6-BA15-D08B17B52A4F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalSources.Taapi", "SignalSources.Taapi\SignalSources.Taapi.csproj", "{3990081B-6506-4CB2-9942-924C32D1B318}"
 EndProject

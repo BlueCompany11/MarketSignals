@@ -1,31 +1,34 @@
-﻿using SignalsSources.Interfaces;
+﻿using SignalSources.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SignalSources.Common
 {
-    public class SignalObserver: ISignalObserver 
+    public partial class SignalObserver : ISignalObserver
     {
         public event Action<ISignal> NewSignalsEvent;
 
         private Dictionary<string, ISignal> signals = new();
         private readonly ISignalIdentifierProvider signalIdentifierProvider;
-        public IEnumerable<ISignal> CurrentSignals => this.signals.Values;
-
-        public ISignalSourceProvider SignalSourceProvider { private get; set; }
-
-        public SignalObserver(ISignalIdentifierProvider signalIdentifierProvider)
+        private readonly ISignalSourceProvider signalSourceProvider;
+        private readonly ISignalSourceConfiguration signalSourceConfiguration;
+        private CancellationTokenSource tokenSource;
+        private SignalObserver(ISignalIdentifierProvider signalIdentifierProvider, ISignalSourceProvider signalSourceProvider, ISignalSourceConfiguration signalSourceConfiguration)
         {
             this.signalIdentifierProvider = signalIdentifierProvider;
+            this.signalSourceProvider = signalSourceProvider;
+            this.signalSourceConfiguration = signalSourceConfiguration;
+            this.tokenSource = new CancellationTokenSource();
         }
 
-        public async Task BeginObservationAsync(IEnumerable<string> profileName, DateTimeOffset publishedAfter)
+        private async Task BeginObservationAsync(IEnumerable<string> profileName, DateTimeOffset publishedAfter)
         {
-            //TODO check if SignalSourceProvider is not null
             foreach (string name in profileName)
             {
-                var signals = await this.SignalSourceProvider.GetSignalsAsync(name, publishedAfter);
+                var signals = await this.signalSourceProvider.GetSignalsAsync(name, publishedAfter);
                 foreach (var item in signals)
                 {
                     string id = this.signalIdentifierProvider.GetSignalIdentify(item);
@@ -36,7 +39,26 @@ namespace SignalSources.Common
                     }
                 }
             }
-
+        }
+        
+        public void CancelObservation()
+        {
+            this.tokenSource.Cancel();
+        }
+        public async Task BeingObservationAsync()
+        {
+            var ct = this.tokenSource.Token;
+            var task = Task.Run(async () =>
+            {
+                while (true)
+                {
+                    ct.ThrowIfCancellationRequested();
+                    await this.BeginObservationAsync(this.signalSourceConfiguration.GetSourceConfigurations().Select(x => x.Id), this.signalSourceConfiguration.PublishedAfter);
+                    await Task.Delay(this.signalSourceConfiguration.Interval);
+                }
+            }, this.tokenSource.Token
+            );
+            await task;
         }
     }
 }
