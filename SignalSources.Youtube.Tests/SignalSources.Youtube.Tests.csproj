@@ -24,7 +24,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SignalSources.Common\SignalSources.Common.csproj" />
-    <ProjectReference Include="..\SignalSources.Taapi\SignalSources.Taapi.csproj" />
     <ProjectReference Include="..\SignalSources.Youtube\SignalSources.Youtube.csproj" />
   </ItemGroup>
 

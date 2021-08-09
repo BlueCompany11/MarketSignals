@@ -44,6 +44,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarketSignals.IoC", "Market
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B677493B-B629-4BCF-A78F-EBE6D609C18C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalSources.Taapi.Tests", "SignalSources.Taapi.Tests\SignalSources.Taapi.Tests.csproj", "{3858FF3E-3890-489C-82CA-D35C94F74E62}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -106,6 +108,10 @@ Global
 		{AE263621-0EA1-4D95-8CD6-170078C32454}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE263621-0EA1-4D95-8CD6-170078C32454}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE263621-0EA1-4D95-8CD6-170078C32454}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3858FF3E-3890-489C-82CA-D35C94F74E62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3858FF3E-3890-489C-82CA-D35C94F74E62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3858FF3E-3890-489C-82CA-D35C94F74E62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3858FF3E-3890-489C-82CA-D35C94F74E62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -126,6 +132,7 @@ Global
 		{EDD54B36-3509-4A12-B7AE-CCAD9A3EFBE5} = {4A632AA8-0B2B-4BC9-B91D-3087C4DDBDA8}
 		{AE263621-0EA1-4D95-8CD6-170078C32454} = {4A632AA8-0B2B-4BC9-B91D-3087C4DDBDA8}
 		{B677493B-B629-4BCF-A78F-EBE6D609C18C} = {4A632AA8-0B2B-4BC9-B91D-3087C4DDBDA8}
+		{3858FF3E-3890-489C-82CA-D35C94F74E62} = {B677493B-B629-4BCF-A78F-EBE6D609C18C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6EAFEC35-9BC4-4462-A9EF-242EB11C6DC9}
