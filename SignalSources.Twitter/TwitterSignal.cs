@@ -36,7 +36,7 @@ namespace SignalSources.Twitter
 
         public string Text { get; init; }
 
-        public SignalLevel Level { get; init; }
+        public SignalLevel Level { get; set; }
         public string From { get; init; }
 }
 }

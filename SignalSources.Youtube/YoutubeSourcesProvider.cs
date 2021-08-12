@@ -14,7 +14,13 @@ namespace SignalSources.Youtube
         {
             var ret = new List<SourceConfiguration>
             {
-                new SourceConfiguration { Id = "UCqK_GSMbpiV8spgD3ZGloSw", SignalLevel = SignalLevel.Mid }
+                new SourceConfiguration { Id = "UCqK_GSMbpiV8spgD3ZGloSw", SignalLevel = SignalLevel.Critical },
+                new SourceConfiguration { Id = "UCiSNk7mzA3cQ3UQEcP_AsYA", SignalLevel = SignalLevel.Mid },
+                new SourceConfiguration { Id = "UClf1NZB9mFLnMDiwVWsBi9w", SignalLevel = SignalLevel.Mid },
+                new SourceConfiguration { Id = "UC7ndkZ4vViKiM7kVEgdrlZQ", SignalLevel = SignalLevel.Mid },
+                new SourceConfiguration { Id = "UCXasJkcS9vY8X4HgzReo10A", SignalLevel = SignalLevel.Mid },
+                new SourceConfiguration { Id = "UCKQvGU-qtjEthINeViNbn6A", SignalLevel = SignalLevel.Mid },
+                new SourceConfiguration { Id = "UCCatR7nWbYrkVXdxXb4cGXw", SignalLevel = SignalLevel.Mid }
             };
             return ret;
         }

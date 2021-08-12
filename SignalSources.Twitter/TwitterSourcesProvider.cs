@@ -14,7 +14,10 @@ namespace SignalSources.Twitter
         {
             var ret = new List<SourceConfiguration>
             {
-                new SourceConfiguration { Id = "PiotrOstapowicz", SignalLevel = SignalLevel.Mid }
+                new SourceConfiguration { Id = "PiotrOstapowicz", SignalLevel = SignalLevel.Mid },
+                new SourceConfiguration { Id = "ZssBecker", SignalLevel = SignalLevel.Mid },
+                new SourceConfiguration { Id = "intocryptoverse", SignalLevel = SignalLevel.High },
+                new SourceConfiguration { Id = "elonmusk", SignalLevel = SignalLevel.Critical }
             };
             return ret;
         }

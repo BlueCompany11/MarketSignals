@@ -6,6 +6,6 @@ namespace SignalSources.Interfaces
 {
     public interface ISignalSourceProvider
     {
-        Task<IEnumerable<ISignal>> GetSignalsAsync(string channelId, DateTimeOffset publishedAfter);
+        Task<IEnumerable<ISignal>> GetSignalsAsync(SourceConfiguration source, DateTimeOffset publishedAfter);
     }
 }

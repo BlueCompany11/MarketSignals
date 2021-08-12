@@ -22,17 +22,17 @@ namespace SignalSources.Youtube
             });
         }
 
-        public async Task<IEnumerable<ISignal>> GetSignalsAsync(string channelId, DateTimeOffset publishedAfter)
+        public async Task<IEnumerable<ISignal>> GetSignalsAsync(SourceConfiguration source, DateTimeOffset publishedAfter)
         {
             List<ISignal> ret = new();
             var searchListRequest = this.youtubeService.Search.List("snippet");
             searchListRequest.PublishedAfter = JsonConvert.SerializeObject(publishedAfter).Replace("\"", "");
-            searchListRequest.ChannelId = channelId;
+            searchListRequest.ChannelId = source.Id;
             var response = await searchListRequest.ExecuteAsync();
             foreach (var item in response.Items)
             {
                 var details = item.Snippet;
-                var signal = new YoutubeSignal(details.PublishedAt ?? DateTime.Now, details.Title, SignalLevel.Mid);
+                var signal = new YoutubeSignal(details.PublishedAt ?? DateTime.Now, details.Title, source.SignalLevel);
                 ret.Add(signal);
             }
             return ret;

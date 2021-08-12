@@ -10,15 +10,35 @@
     d:DesignWidth="800"
     mc:Ignorable="d">
     <Grid>
-
         <ListView Name="SignalsListView" ItemsSource="{Binding Signals}">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Date}" Header="Date" />
-                    <GridViewColumn DisplayMemberBinding="{Binding Text}" Header="Info" />
-                    <GridViewColumn DisplayMemberBinding="{Binding Level}" Header="Level" />
-                </GridView>
-            </ListView.View>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Level}" Value="0">
+                            <Setter Property="BorderBrush" Value="Yellow" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Level}" Value="1">
+                            <Setter Property="BorderBrush" Value="Green" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Level}" Value="2">
+                            <Setter Property="BorderBrush" Value="Blue" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Level}" Value="3">
+                            <Setter Property="BorderBrush" Value="Red" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="{Binding Date}" />
+                        <TextBlock Text="{Binding Text}" />
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+
         </ListView>
 
     </Grid>

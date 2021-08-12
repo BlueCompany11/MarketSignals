@@ -1,4 +1,6 @@
-﻿using MarketSignals.Desktop.Views;
+﻿using MarketSignals.Desktop.Utilities;
+using MarketSignals.Desktop.Utilities.Interfaces;
+using MarketSignals.Desktop.Views;
 using MarketSignals.IoC;
 using Prism.Ioc;
 using Prism.Regions;
@@ -26,6 +28,8 @@ namespace MarketSignals.Desktop
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             var setup = new Setup();
+            containerRegistry.Register<ISoundSignal, SoundSignal>();
+            containerRegistry.Register<IAlarmSignal, AlarmSignal>();
             containerRegistry.RegisterInstance(new List<ISignalObserver> { setup.ResolveTwitterSignalObserver(), setup.ResolveYoutubeSignalObserver() });
         }
     }

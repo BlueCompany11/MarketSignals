@@ -1,7 +1,6 @@
 ﻿using SignalSources.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -24,11 +23,11 @@ namespace SignalSources.Common
             this.tokenSource = new CancellationTokenSource();
         }
 
-        private async Task BeginObservationAsync(IEnumerable<string> profileName, DateTimeOffset publishedAfter)
+        private async Task BeginObservationAsync(IEnumerable<SourceConfiguration> sourceConfiguration, DateTimeOffset publishedAfter)
         {
-            foreach (string name in profileName)
+            foreach (var source in sourceConfiguration)
             {
-                var signals = await this.signalSourceProvider.GetSignalsAsync(name, publishedAfter);
+                var signals = await this.signalSourceProvider.GetSignalsAsync(source, publishedAfter);
                 foreach (var item in signals)
                 {
                     string id = this.signalIdentifierProvider.GetSignalIdentify(item);
@@ -53,7 +52,7 @@ namespace SignalSources.Common
                 while (true)
                 {
                     ct.ThrowIfCancellationRequested();
-                    await this.BeginObservationAsync(this.signalSourceConfiguration.GetSourceConfigurations().Select(x => x.Id), this.signalSourceConfiguration.PublishedAfter);
+                    await this.BeginObservationAsync(this.signalSourceConfiguration.GetSourceConfigurations(), this.signalSourceConfiguration.PublishedAfter);
                     await Task.Delay(this.signalSourceConfiguration.Interval);
                 }
             }, this.tokenSource.Token

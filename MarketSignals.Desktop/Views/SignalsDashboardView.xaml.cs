@@ -10,6 +10,7 @@ namespace MarketSignals.Desktop.Views
         public SignalsDashboardView()
         {
             this.InitializeComponent();
+
         }
     }
 }
