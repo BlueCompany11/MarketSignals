@@ -7,6 +7,7 @@
     <UserSecretsId>f012abc9-e3f3-4582-9693-d4a8b055cb70</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.1.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="5.0.0" />
     <PackageReference Include="Prism.DryIoc" Version="8.1.97" />
     <PackageReference Include="Prism.DryIoc.Extensions" Version="8.0.62" />

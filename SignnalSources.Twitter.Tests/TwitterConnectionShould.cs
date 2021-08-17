@@ -1,5 +1,6 @@
 using FluentAssertions;
 using SignalSources.Common;
+using SignalSources.Interfaces;
 using SignalSources.Twitter;
 using System;
 using System.Threading.Tasks;
@@ -12,8 +13,9 @@ namespace SignnalSources.Twitter.Tests
         [Fact]
         public async Task Connect()
         {
+            var sourceConfig = new SourceConfiguration { Id = "elonmusk"};
             var sut = new TwitterConnection(this.twitterSecrets);
-            var signals = await sut.GetSignalsAsync("Twitter", DateTimeOffset.Now.AddDays(-40));
+            var signals = await sut.GetSignalsAsync(sourceConfig, DateTimeOffset.Now.AddDays(-40));
             signals.Should().HaveCountGreaterThan(0);
         }
     }

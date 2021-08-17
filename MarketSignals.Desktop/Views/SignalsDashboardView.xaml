@@ -35,6 +35,7 @@
                         <TextBlock Text="{Binding Date}" />
                         <TextBlock Text="{Binding Text}" />
                     </WrapPanel>
+
                 </DataTemplate>
             </ListView.ItemTemplate>
 

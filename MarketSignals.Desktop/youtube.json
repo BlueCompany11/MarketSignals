@@ -67,13 +67,28 @@
     },
     {
       "Id": "UCZ3fejCy_P5xhv9QF-V6-YA",
-      "SignalLevel": 3,
+      "SignalLevel": 2,
       "Name": "Sheldon Evans"
     },
     {
       "Id": "UCKy4pRGNqVvpI6HrO9lo3XA",
-      "SignalLevel": 3,
+      "SignalLevel": 1,
       "Name": "Krypto Raport"
+    },
+    {
+      "Id": "UCY0xL8V6NzzFcwzHCgB8orQ",
+      "SignalLevel": 1,
+      "Name": "Dapp University"
+    },
+    {
+      "Id": "UCeBbEvlSOeJMwSVYOdXOvvw",
+      "SignalLevel": 3,
+      "Name": "CoinsKid"
+    },
+    {
+      "Id": "UCOHxDwCcOzBaLkeTazanwcw",
+      "SignalLevel": 3,
+      "Name": "Game of Trades"
     }
   ]
 }
