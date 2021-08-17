@@ -1,0 +1,79 @@
+﻿{
+  "SourceConfigurations": [
+    {
+      "Id": "UCqK_GSMbpiV8spgD3ZGloSw",
+      "SignalLevel": 3,
+      "Name": "Coin Bureau"
+    },
+    {
+      "Id": "UCCatR7nWbYrkVXdxXb4cGXw",
+      "SignalLevel": 3,
+      "Name": "DataDash"
+    },
+    {
+      "Id": "UClf1NZB9mFLnMDiwVWsBi9w",
+      "SignalLevel": 1,
+      "Name": "321 Crypto"
+    },
+    {
+      "Id": "UCiSNk7mzA3cQ3UQEcP_AsYA",
+      "SignalLevel": 3,
+      "Name": "Jurek S. Analizy"
+    },
+    {
+      "Id": "UC-a_eYfBOhGqTsnfqrIEPvA",
+      "SignalLevel": 3,
+      "Name": "Krzysztof Be"
+    },
+    {
+      "Id": "UCKQvGU-qtjEthINeViNbn6A",
+      "SignalLevel": 2,
+      "Name": "Alex Becker's Channel"
+    },
+    {
+      "Id": "UC5zsu2Hu1mmmWuT_vOBPv2Q",
+      "SignalLevel": 1,
+      "Name": "Krypto Kamikaze"
+    },
+    {
+      "Id": "UCXasJkcS9vY8X4HgzReo10A",
+      "SignalLevel": 1,
+      "Name": "Piotr Ostapowicz"
+    },
+    {
+      "Id": "UCQpBmjL9kJ768fty4tbqa6Q",
+      "SignalLevel": 1,
+      "Name": "Phil Konieczny"
+    },
+    {
+      "Id": "UCbLhGKVY-bJPcawebgtNfbw",
+      "SignalLevel": 3,
+      "Name": "Altcoin Daily"
+    },
+    {
+      "Id": "UCRvqjQPSeaWn-uEx-w0XOIg",
+      "SignalLevel": 3,
+      "Name": "Benjamin Cowen"
+    },
+    {
+      "Id": "UCA_JwxmDiCuUQAdSqcL3U0g",
+      "SignalLevel": 2,
+      "Name": "Tomasz Wrzeszczyński"
+    },
+    {
+      "Id": "UC7ndkZ4vViKiM7kVEgdrlZQ",
+      "SignalLevel": 3,
+      "Name": "Crypto Crew University"
+    },
+    {
+      "Id": "UCZ3fejCy_P5xhv9QF-V6-YA",
+      "SignalLevel": 3,
+      "Name": "Sheldon Evans"
+    },
+    {
+      "Id": "UCKy4pRGNqVvpI6HrO9lo3XA",
+      "SignalLevel": 3,
+      "Name": "Krypto Raport"
+    }
+  ]
+}

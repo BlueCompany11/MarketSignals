@@ -8,6 +8,11 @@
     Height="350"
     prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid>
-        <ContentControl prism:RegionManager.RegionName="Dashboard" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ContentControl prism:RegionManager.RegionName="SideMainMenu" />
+        <ContentControl prism:RegionManager.RegionName="Dashboard" Grid.Column="1"/>
     </Grid>
 </Window>

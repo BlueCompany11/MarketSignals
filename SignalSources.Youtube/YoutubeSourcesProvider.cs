@@ -6,13 +6,20 @@ namespace SignalSources.Youtube
 {
     public class YoutubeSourcesProvider : ISignalSourceConfiguration
     {
+        private readonly IDataAccess<SourceConfiguration> dataAccess;
+
         public TimeSpan Interval => TimeSpan.FromMinutes(5);
 
         public DateTimeOffset PublishedAfter => DateTimeOffset.Now.AddDays(-1);
-
+         
+        public YoutubeSourcesProvider(IDataAccess<SourceConfiguration> dataAccess)
+        {
+            this.dataAccess = dataAccess;
+        }
         public List<SourceConfiguration> GetSourceConfigurations()
         {
-            var ret = new List<SourceConfiguration>
+            return new List<SourceConfiguration>(this.dataAccess.GetSourceConfigurations());
+/*            var ret = new List<SourceConfiguration>
             {
                 new SourceConfiguration { Id = "UCqK_GSMbpiV8spgD3ZGloSw", SignalLevel = SignalLevel.Critical },
                 new SourceConfiguration { Id = "UCiSNk7mzA3cQ3UQEcP_AsYA", SignalLevel = SignalLevel.Mid },
@@ -22,7 +29,7 @@ namespace SignalSources.Youtube
                 new SourceConfiguration { Id = "UCKQvGU-qtjEthINeViNbn6A", SignalLevel = SignalLevel.Mid },
                 new SourceConfiguration { Id = "UCCatR7nWbYrkVXdxXb4cGXw", SignalLevel = SignalLevel.Mid }
             };
-            return ret;
+            return ret;*/
         }
     }
 }

@@ -1,0 +1,44 @@
+﻿{
+  "SourceConfigurations": [
+    {
+      "Id": "PiotrOstapowicz",
+      "SignalLevel": 0,
+      "Name": "Piotr Ostapowicz"
+    },
+    {
+      "Id": "intocryptoverse",
+      "SignalLevel": 0,
+      "Name": "Benjamin Cowen"
+    },
+    {
+      "Id": "elonmusk",
+      "SignalLevel": 3,
+      "Name": "Elon Musk"
+    },
+    {
+      "Id": "Alex Becker",
+      "SignalLevel": 2,
+      "Name": "ZssBecker"
+    },
+    {
+      "Id": "Whale Alert",
+      "SignalLevel": 1,
+      "Name": "whale_alert"
+    },
+    {
+      "Id": "michael_saylor",
+      "SignalLevel": 2,
+      "Name": "Michael Saylor"
+    },
+    {
+      "Id": "glassnodealerts",
+      "SignalLevel": 1,
+      "Name": "glassnode alerts"
+    },
+    {
+      "Id": "crypto_birb",
+      "SignalLevel": 2,
+      "Name": "Adrian K. Zduńczyk"
+    }
+  ]
+}
