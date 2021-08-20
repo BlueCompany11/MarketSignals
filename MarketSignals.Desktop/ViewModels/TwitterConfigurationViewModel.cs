@@ -18,10 +18,12 @@ namespace MarketSignals.Desktop.ViewModels
         {
             this.SignalSources = new(signalSourceConfiguration.GetSourceConfigurations());
             this.AddCommand = new DelegateCommand(this.Add);
+            this.SaveCommand = new DelegateCommand(this.Save);
             this.dataAccess = dataAccess;
             this.Levels = new List<string>() { "Critical", "High", "Mid", "Low" };
         }
         public DelegateCommand AddCommand { get; private set; }
+        public DelegateCommand SaveCommand { get; private set; }
 
         private string _id;
         private readonly IDataAccess<SourceConfiguration> dataAccess;
@@ -75,7 +77,11 @@ namespace MarketSignals.Desktop.ViewModels
         }
         private void Add()
         {
-            this.SignalSources.Add(new SourceConfiguration { Id = Id, SignalLevel = this.Convert(this.SelectedLevel), Name = Name });
+            this.SignalSources.Add(new SourceConfiguration { Id = Id, SignalLevel = this.Convert(this.SelectedLevel), Name = Name, Active = true });
+            this.dataAccess.Save(this.SignalSources);
+        }
+        public void Save()
+        {
             this.dataAccess.Save(this.SignalSources);
         }
     }

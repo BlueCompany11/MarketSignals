@@ -3,42 +3,50 @@
     {
       "Id": "PiotrOstapowicz",
       "SignalLevel": 0,
-      "Name": "Piotr Ostapowicz"
+      "Name": "Piotr Ostapowicz",
+      "Active": true
     },
     {
       "Id": "intocryptoverse",
       "SignalLevel": 0,
-      "Name": "Benjamin Cowen"
+      "Name": "Benjamin Cowen",
+      "Active": true
     },
     {
       "Id": "elonmusk",
       "SignalLevel": 3,
-      "Name": "Elon Musk"
+      "Name": "Elon Musk",
+      "Active": true
     },
     {
       "Id": "Alex Becker",
       "SignalLevel": 2,
-      "Name": "ZssBecker"
+      "Name": "ZssBecker",
+      "Active": true
     },
     {
       "Id": "Whale Alert",
       "SignalLevel": 1,
-      "Name": "whale_alert"
+      "Name": "whale_alert",
+      "Active": true
     },
     {
       "Id": "michael_saylor",
       "SignalLevel": 2,
-      "Name": "Michael Saylor"
+      "Name": "Michael Saylor",
+      "Active": true
     },
     {
       "Id": "glassnodealerts",
       "SignalLevel": 1,
-      "Name": "glassnode alerts"
+      "Name": "glassnode alerts",
+      "Active": true
     },
     {
       "Id": "crypto_birb",
       "SignalLevel": 2,
-      "Name": "Adrian K. Zduńczyk"
+      "Name": "Adrian K. Zduńczyk",
+      "Active": true
     }
   ]
 }

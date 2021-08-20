@@ -8,5 +8,6 @@ namespace SignalSources.Interfaces
         string Text { get; }
         SignalLevel Level { get; }
         string From { get; }
+        string Url { get; }
     }
 }

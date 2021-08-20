@@ -17,9 +17,10 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>
-                        <TextBlock Margin="0,0,20,0" Text="{Binding Id}" />
+                        <TextBlock Margin="0,0,20,0" Text="{Binding Name}" />
                         <TextBlock Margin="0,0,20,0" Text="{Binding SignalLevel}" />
-                        <TextBlock Text="{Binding Name}" />
+                        <TextBlock Margin="0,0,20,0" Text="{Binding Id}" />
+                        <CheckBox IsChecked="{Binding Active}" />
                     </WrapPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
@@ -39,6 +40,7 @@
                 <ComboBox ItemsSource="{Binding Levels}" SelectedValue="{Binding SelectedLevel}" />
                 <TextBox Text="{Binding Name}" />
                 <Button Command="{Binding AddCommand}" Content="Add" />
+                <Button Command="{Binding SaveCommand}" Content="Save changes" />
             </StackPanel>
         </Grid>
 

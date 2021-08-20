@@ -31,14 +31,9 @@
             </ListView.ItemContainerStyle>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <WrapPanel>
-                        <TextBlock Text="{Binding Date}" />
-                        <TextBlock Text="{Binding Text}" />
-                    </WrapPanel>
-
+                    <local:SignalView Tag="{Binding DataContext,ElementName=SignalsListView}"></local:SignalView>
                 </DataTemplate>
             </ListView.ItemTemplate>
-
 
         </ListView>
 

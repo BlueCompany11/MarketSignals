@@ -12,26 +12,26 @@ namespace SignalSources.Twitter
             this.Date = date;
             this.text = text;
             this.Level = level;
-            this.profileName = profileName;
             this.hashtags = hashtags;
-            this.url = url;
+            this.Url = url;
             this.Text = this.CreateText();
+            this.From = profileName;
         }
 
         private string CreateText()
         {
+            if(this.hashtags.Count > 0)
+            {
+                this.hashtags[0] = this.hashtags[0].Insert(0, "#");
+            }
             var ret = new StringBuilder()
-                .Append(this.Date)
-                .AppendFormat("User: {0} twitted {1} \n", this.profileName, this.text)
-                .Append("Hashtags: ")
-                .AppendJoin("# ", this.hashtags)
-                .AppendFormat("\nUrl: {0}", this.url);
+                .AppendFormat(this.text)
+                .AppendJoin("# ", this.hashtags);
             return ret.ToString();
         }
-        private string profileName;
         private List<string> hashtags;
-        private string url;
         private string text;
+        public string Url { get; }
         public DateTime Date { get; init; }
 
         public string Text { get; init; }

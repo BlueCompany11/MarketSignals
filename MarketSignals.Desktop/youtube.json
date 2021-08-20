@@ -3,92 +3,110 @@
     {
       "Id": "UCqK_GSMbpiV8spgD3ZGloSw",
       "SignalLevel": 3,
-      "Name": "Coin Bureau"
+      "Name": "Coin Bureau",
+      "Active": true
     },
     {
       "Id": "UCCatR7nWbYrkVXdxXb4cGXw",
       "SignalLevel": 3,
-      "Name": "DataDash"
+      "Name": "DataDash",
+      "Active": true
     },
     {
       "Id": "UClf1NZB9mFLnMDiwVWsBi9w",
       "SignalLevel": 1,
-      "Name": "321 Crypto"
+      "Name": "321 Crypto",
+      "Active": true
     },
     {
       "Id": "UCiSNk7mzA3cQ3UQEcP_AsYA",
       "SignalLevel": 3,
-      "Name": "Jurek S. Analizy"
+      "Name": "Jurek S. Analizy",
+      "Active": true
     },
     {
       "Id": "UC-a_eYfBOhGqTsnfqrIEPvA",
       "SignalLevel": 3,
-      "Name": "Krzysztof Be"
+      "Name": "Krzysztof Be",
+      "Active": true
     },
     {
       "Id": "UCKQvGU-qtjEthINeViNbn6A",
       "SignalLevel": 2,
-      "Name": "Alex Becker's Channel"
+      "Name": "Alex Becker's Channel",
+      "Active": true
     },
     {
       "Id": "UC5zsu2Hu1mmmWuT_vOBPv2Q",
       "SignalLevel": 1,
-      "Name": "Krypto Kamikaze"
+      "Name": "Krypto Kamikaze",
+      "Active": true
     },
     {
       "Id": "UCXasJkcS9vY8X4HgzReo10A",
       "SignalLevel": 1,
-      "Name": "Piotr Ostapowicz"
+      "Name": "Piotr Ostapowicz",
+      "Active": true
     },
     {
       "Id": "UCQpBmjL9kJ768fty4tbqa6Q",
       "SignalLevel": 1,
-      "Name": "Phil Konieczny"
+      "Name": "Phil Konieczny",
+      "Active": true
     },
     {
       "Id": "UCbLhGKVY-bJPcawebgtNfbw",
       "SignalLevel": 3,
-      "Name": "Altcoin Daily"
+      "Name": "Altcoin Daily",
+      "Active": true
     },
     {
       "Id": "UCRvqjQPSeaWn-uEx-w0XOIg",
       "SignalLevel": 3,
-      "Name": "Benjamin Cowen"
+      "Name": "Benjamin Cowen",
+      "Active": true
     },
     {
       "Id": "UCA_JwxmDiCuUQAdSqcL3U0g",
       "SignalLevel": 2,
-      "Name": "Tomasz Wrzeszczyński"
+      "Name": "Tomasz Wrzeszczyński",
+      "Active": true
     },
     {
       "Id": "UC7ndkZ4vViKiM7kVEgdrlZQ",
       "SignalLevel": 3,
-      "Name": "Crypto Crew University"
+      "Name": "Crypto Crew University",
+      "Active": true
     },
     {
       "Id": "UCZ3fejCy_P5xhv9QF-V6-YA",
       "SignalLevel": 2,
-      "Name": "Sheldon Evans"
+      "Name": "Sheldon Evans",
+      "Active": true
     },
     {
       "Id": "UCKy4pRGNqVvpI6HrO9lo3XA",
       "SignalLevel": 1,
-      "Name": "Krypto Raport"
+      "Name": "Krypto Raport",
+      "Active": true
     },
     {
       "Id": "UCY0xL8V6NzzFcwzHCgB8orQ",
       "SignalLevel": 1,
-      "Name": "Dapp University"
+      "Name": "Dapp University",
+      "Active": true
     },
     {
       "Id": "UCeBbEvlSOeJMwSVYOdXOvvw",
       "SignalLevel": 3,
-      "Name": "CoinsKid"
+      "Name": "CoinsKid",
+      "Active": true
     },
     {
       "Id": "UCOHxDwCcOzBaLkeTazanwcw",
       "SignalLevel": 3,
-      "Name": "Game of Trades"
+      "Name": "Game of Trades",
+      "Active": true
     }
   ]
 }

@@ -1,5 +1,6 @@
 ﻿using Google.Apis.Services;
 using Google.Apis.YouTube.v3;
+using Google.Apis.YouTube.v3.Data;
 using Newtonsoft.Json;
 using SignalSources.Interfaces;
 using System;
@@ -28,11 +29,20 @@ namespace SignalSources.Youtube
             var searchListRequest = this.youtubeService.Search.List("snippet");
             searchListRequest.PublishedAfter = JsonConvert.SerializeObject(publishedAfter).Replace("\"", "");
             searchListRequest.ChannelId = source.Id;
-            var response = await searchListRequest.ExecuteAsync();
+            SearchListResponse response;
+            try
+            {
+                response = await searchListRequest.ExecuteAsync();
+            }
+            catch (Google.GoogleApiException)
+            {
+                //TODO recive this error higher and inform user about too many requests
+                throw;
+            }
             foreach (var item in response.Items)
             {
                 var details = item.Snippet;
-                var signal = new YoutubeSignal(details.PublishedAt ?? DateTime.Now, details.Title, source.SignalLevel);
+                var signal = new YoutubeSignal(details.PublishedAt ?? DateTime.Now, details.Title, source.SignalLevel, @"https://www.youtube.com/watch?v="+item.Id,details.ChannelTitle);
                 ret.Add(signal);
             }
             return ret;
