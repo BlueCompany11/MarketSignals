@@ -28,7 +28,7 @@
       "Id": "Whale Alert",
       "SignalLevel": 1,
       "Name": "whale_alert",
-      "Active": true
+      "Active": false
     },
     {
       "Id": "michael_saylor",
@@ -40,13 +40,13 @@
       "Id": "glassnodealerts",
       "SignalLevel": 1,
       "Name": "glassnode alerts",
-      "Active": true
+      "Active": false
     },
     {
       "Id": "crypto_birb",
       "SignalLevel": 2,
       "Name": "Adrian K. Zduńczyk",
-      "Active": true
+      "Active": false
     }
   ]
 }
