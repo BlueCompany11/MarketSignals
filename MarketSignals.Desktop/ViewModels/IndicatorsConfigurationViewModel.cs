@@ -29,6 +29,30 @@ namespace MarketSignals.Desktop.ViewModels
                         this.ReturnedValue = ret.Value.ToString();
                     });
                     break;
+                case nameof(Indicators.ChaikinMoneyFlow):
+                    this.orchestrator.PutRequest(async () => {
+                        var ret = await this.connection.GetChaikinMoneyFlow(this.SelectedPair, this.SelectedInverval);
+                        this.ReturnedValue = ret.Value.ToString();
+                    });
+                    break;
+                case nameof(Indicators.Doji):
+                    this.orchestrator.PutRequest(async () => {
+                        var ret = await this.connection.GetDoji(this.SelectedPair, this.SelectedInverval);
+                        this.ReturnedValue = ret.Value.ToString();
+                    });
+                    break;
+                case nameof(Indicators.ExponentialMovingAverage):
+                    this.orchestrator.PutRequest(async () => {
+                        var ret = await this.connection.GetExponentialMovingAverage(this.SelectedPair, this.SelectedInverval);
+                        this.ReturnedValue = ret.Value.ToString();
+                    });
+                    break;
+                case nameof(Indicators.FibonacciRetracement):
+                    this.orchestrator.PutRequest(async () => {
+                        var ret = await this.connection.GetFibonacciRetracement(this.SelectedPair, this.SelectedInverval);
+                        this.ReturnedValue = ret.Value.ToString();
+                    });
+                    break;
                 default:
                     break;
             }
