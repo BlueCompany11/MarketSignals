@@ -1,5 +1,6 @@
 ﻿using DryIoc;
 using Microsoft.Extensions.Configuration;
+using SignalSources.Binance;
 using SignalSources.Common;
 using SignalSources.Interfaces;
 using SignalSources.Taapi;
@@ -19,9 +20,9 @@ namespace MarketSignals.IoC
         {
             var config = SignalsSecretsProvider.GetConfigurationRoot();
             this.container.RegisterInstance<IConfigurationRoot>(config);
+            //yt & twitter
             this.container.Register<TwitterSecrets>();
             this.container.Register<YoutubeSecrets>();
-            this.container.Register<TaapiSecrets>();
             this.container.Register<ISignalSourceProvider, TwitterConnection>(serviceKey: twitter);
             this.container.Register<ISignalSourceProvider, YoutubeConnection>(serviceKey: youtube);
             this.container.Register<ISignalIdentifierProvider, SignalIdentifierProvider>();
@@ -37,6 +38,16 @@ namespace MarketSignals.IoC
             this.container.Register<ISignalObserver, SignalObserver>(serviceKey: twitter,
                 made: Made.Of(() => SignalObserverFactory.NewSignalObserver(Arg.Of<ISignalIdentifierProvider>(), Arg.Of<ISignalSourceProvider>(twitter), 
                 Arg.Of<ISignalSourceConfiguration>(twitter))));
+            //taapi
+            this.container.Register<TaapiSecrets>();
+            this.container.Register<IIntervalsProvider, IntervalsProvider>();
+            this.container.Register<IPairNamesProvider, PairNamesProvider>();
+            this.container.Register<IIndicatorsProvider, IndicatorsProvider>();
+            this.container.Register<BinanceConnection>();
+            this.container.Register<TaapiConnection>();
+            this.container.Register<Orchestrator>();
+            this.container.Register<ITaapiInfo, TaapiInfo>();
+            
             
         }
         public ISignalObserver ResolveTwitterSignalObserver()
@@ -62,6 +73,18 @@ namespace MarketSignals.IoC
         public IDataAccess<SourceConfiguration> ResolveYoutubeDataAccess()
         {
             return this.container.Resolve<IDataAccess<SourceConfiguration>>(serviceKey: youtube);
+        }
+        public TaapiConnection ResolveTaapiConnection()
+        {
+            return this.container.Resolve<TaapiConnection>();
+        }
+        public Orchestrator ResolveTaapiOrchestrator()
+        {
+            return this.container.Resolve<Orchestrator>();
+        }
+        public ITaapiInfo ResolveITaapiInfo()
+        {
+            return this.container.Resolve<ITaapiInfo>();
         }
     }
 }

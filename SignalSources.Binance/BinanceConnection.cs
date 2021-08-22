@@ -19,7 +19,10 @@ namespace SignalSources.Binance
         private BinanceClient client;
         public BinanceConnection Connect()
         {
-            this.client = new BinanceClient();
+            if(this.client == null)
+            {
+                this.client = new BinanceClient();
+            }
             return this;
         }
         public List<string> GetAllCryptoPairs()

@@ -6,6 +6,7 @@ using MarketSignals.IoC;
 using Prism.Ioc;
 using Prism.Regions;
 using SignalSources.Interfaces;
+using SignalSources.Taapi;
 using System.Collections.Generic;
 using System.Windows;
 
@@ -33,6 +34,8 @@ namespace MarketSignals.Desktop
             var setup = new Setup();
             containerRegistry.Register<ISoundSignal, SoundSignal>();
             containerRegistry.Register<IAlarmSignal, AlarmSignal>();
+            containerRegistry.Register<TaapiConnection>();
+            containerRegistry.Register<IndicatorsConfigurationViewModel>(() => new IndicatorsConfigurationViewModel(setup.ResolveTaapiConnection(),setup.ResolveTaapiOrchestrator(),setup.ResolveITaapiInfo()));
             containerRegistry.RegisterInstance(new List<ISignalObserver> { setup.ResolveTwitterSignalObserver(), setup.ResolveYoutubeSignalObserver() });
             containerRegistry.Register<TwitterConfigurationViewModel>(()=>new TwitterConfigurationViewModel(setup.ResolveTwitterSourceProvider(), setup.ResolveTwitterDataAccess()));
             containerRegistry.Register<YoutubeConfigurationViewModel>(() => new YoutubeConfigurationViewModel(setup.ResolveYoutubeSourceProvider(),setup.ResolveYoutubeDataAccess()));
