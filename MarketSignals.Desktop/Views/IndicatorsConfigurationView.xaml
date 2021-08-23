@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:MarketSignals.Desktop.Views"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     d:DesignHeight="450"
     d:DesignWidth="800"
@@ -11,7 +12,13 @@
     <Grid>
         <StackPanel>
             <ComboBox ItemsSource="{Binding IndicatorNames}" SelectedValue="{Binding SelectedIndicator}" />
-            <ComboBox ItemsSource="{Binding PairNames}" SelectedValue="{Binding SelectedPair}" />
+            <ComboBox
+                x:Name="OutlinedComboBox"
+                Width="256"
+                materialDesign:HintAssist.Hint="Crypto pair"
+                ItemsSource="{Binding PairNames}"
+                SelectedValue="{Binding SelectedPair}"
+                Style="{StaticResource MaterialDesignOutlinedComboBox}" />
             <ComboBox ItemsSource="{Binding Intervals}" SelectedValue="{Binding SelectedInverval}" />
             <Button Command="{Binding SendRequestCommand}" Content="Send" />
             <TextBlock Text="{Binding ReturnedValue}" />

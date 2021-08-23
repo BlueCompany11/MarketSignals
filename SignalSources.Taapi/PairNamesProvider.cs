@@ -5,7 +5,6 @@ using System.Linq;
 
 namespace SignalSources.Taapi
 {
-
     public class PairNamesProvider : IPairNamesProvider
     {
         private readonly BinanceConnection binanceConnection;
@@ -24,7 +23,7 @@ namespace SignalSources.Taapi
             }
             ret = ret.Where(x => !x.Contains('_')).ToList();
             //TODO temp restriction for free api
-            ret = ret.Where(x => x == "BTC/USDT").ToList();
+            //ret = ret.Where(x => x == "BTC/USDT").ToList();
             return ret;
         }
     }
